@@ -1,24 +1,25 @@
-import { ChangeEvent, FormEvent } from "react";
+import { FormEvent } from "react";
+import { useTodoStore } from "../hooks";
 
-type AddTaskFormPropTypes = {
-  onAddTask: (e: FormEvent<HTMLFormElement>) => void;
-  onChangeTaskText: (e: ChangeEvent<HTMLInputElement>) => void;
-  taskTxt: string;
-};
-
-export default function AddTaskForm({
-  onAddTask,
-  onChangeTaskText,
-  taskTxt,
-}: AddTaskFormPropTypes) {
+export default function AddTaskForm() {
+  const { taskTxt, setTaskTxt, addTask } = useTodoStore((state) => state);
+  const onAddTask = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    addTask({
+      text: taskTxt,
+      id: Date.now() + Math.random(),
+    });
+    setTaskTxt("");
+  };
   return (
     <>
       <form className="add-task-form" onSubmit={onAddTask}>
         <input
+          required
           type="text"
           placeholder="Enter New Task"
           value={taskTxt}
-          onChange={onChangeTaskText}
+          onChange={(e) => setTaskTxt(e.target.value)}
         />
         <button type="submit">Add Task</button>
       </form>
