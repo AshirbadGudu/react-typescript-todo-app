@@ -1,18 +1,20 @@
+import { useTodoStore } from "../hooks";
+
 type Task = {
   id: number;
   text: string;
 };
 type TaskListPropType = {
   task: Task;
-  deleteTask: (id: number) => void;
 };
 
-export default function TaskList({ task, deleteTask }: TaskListPropType) {
+export default function TaskList({ task }: TaskListPropType) {
+  const { removeTask } = useTodoStore((state) => state);
   return (
     <>
       <li className="task-list">
         <span>{`${task.text}`}</span>
-        <button onClick={() => deleteTask(task.id)}>Delete</button>
+        <button onClick={() => removeTask(task.id)}>Delete</button>
       </li>
     </>
   );
