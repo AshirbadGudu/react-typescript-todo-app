@@ -13,7 +13,7 @@ export default function AddTaskForm({
 }: AddTaskFormPropTypes) {
   return (
     <>
-      <form onSubmit={onAddTask}>
+      <form className="add-task-form" onSubmit={onAddTask}>
         <input
           type="text"
           placeholder="Enter New Task"

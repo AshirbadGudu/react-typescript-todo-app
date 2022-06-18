@@ -42,13 +42,65 @@
 }
 
 .task-list button {
+  background-image: radial-gradient(
+    100% 100% at 100% 0,
+    #ff5a5a 0,
+    #ff1500 100%
+  );
+  border: 0;
+  border-radius: 6px;
+  padding: 0.5vh 1vh;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #fa000023 0 -3px 0 inset;
   color: #fff;
-  border: none;
-  background: #fa000091;
-  font-weight: bold;
   cursor: pointer;
+  line-height: 1;
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+
+.add-task-form button {
+  background-image: radial-gradient(
+    100% 100% at 100% 0,
+    #5adaff 0,
+    #5468ff 100%
+  );
+  border: 0;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
+  color: #fff;
+  cursor: pointer;
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  height: 48px;
+  line-height: 1;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  transition: box-shadow 0.15s, transform 0.15s;
+  font-size: 18px;
+}
+
+.add-task-form button:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  transform: scale(1.01);
+}
+
+.add-task-form input {
+  height: 48px;
+  border: 0;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
+  font-size: 18px;
+  padding: 0 16px;
+}
+.add-task-form input:focus {
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
   outline: none;
-  padding: 0.5vh 1vw;
-  border: 1px solid hsla(0, 0%, 100%, 0.282);
-  border-radius: 4px;
 }
